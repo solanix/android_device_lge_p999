@@ -8,14 +8,15 @@ rilswitch.ganlibpath=/system/lib/libganril.so
 
 ro.sf.lcd_density=240
 
-mobiledata.interfaces=gannet0,vsnet0,vsnet1,vsnet2,vsnet3
-
 # hold precise GC data, and use SMP
-dalvik.vm.dexopt-flags=m=y,u=n
+dalvik.vm.dexopt-flags=m=y,v=n,o=v,u=n
 
 # Mount the internal SD card, too
-ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
+ro.additionalmounts=/storage/sdcard0
+ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+
+#hwui blacklist
+hwui.use.blacklist=true
 
 # GSM, WCDMA preferred
 # This appears to be causing "Unknown" network type
